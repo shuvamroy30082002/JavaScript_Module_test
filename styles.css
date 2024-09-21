@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+:root{
+  --dark-green: #004429;
+  --gray: #656565;
+  --yellow: #FFD600;
+  --black: #252525;
+  --green: #8CC461;
+  --white: #FFF;
+  --inner-grren: #1da82b;
+  --mid-green:#1da82b90;
+  --outer-green:#2E9A2563;
+}
+
+.shuvam_main-screen{
+  width: 100vw;
+  height: 100vh;
+  background: var(--green);
+  color: var(--white);
+  position: relative;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  width: full;
+  margin-top: 4%;
+}
+
+.shuvam_scoreBoard{
+  width: 55%;
+  border: 2px solid var(--white);
+  border-radius: 1rem;
+  display: flex;
+  padding: 10px 15px;
+  justify-content: space-between;
+}
+
+h1{
+  letter-spacing: 4px;
+}
+
+.shuvam_display-score{
+  display: flex;
+  gap: 25px;
+  width: 35%;
+}
+
+.shuvam_scoreCount{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 50% ;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  color: var(--gray);
+  text-transform:uppercase;
+  letter-spacing: 1.7px;
+  padding: 5px;
+}
+
+.shuvam_scoreComp, .shuvam_scorePlayer{
+  justify-self: flex-end;
+  font-size: 55px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  width: full;
+  height: 60%;
+  margin-top: 5%;
+}
+
+.shuvam_playing-zone{
+  height: full;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.shuvam_playing-zone__top{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  height: 40%;
+  z-index: 2;
+}
+
+#shuvam_line1, #shuvam_line2, #shuvam_line3 {
+  position: absolute;
+  z-index: -1;
+}
+
+#shuvam_line1 {
+  left: 35%;
+  top: 25%;
+  width: 30%;
+  height: 5%;
+}
+
+#shuvam_line3{
+  left:34%;
+  top: 35%;
+  width: 13%;
+}
+
+#shuvam_line2{
+  left:53%;
+  top: 35% ;
+  width: 13%;
+}
+
+.shuvam_playing-zone__bottom {
+  position: relative;
+  height: 40%;
+}
+
+.shuvam_item, .shuvam_side-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 150px;
+  border: none;
+}
+
+.shuvam_item{
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+#shuvam_rock{
+  background-image: url("./assets/Group 2.png");
+}
+
+#shuvam_scissor{
+  background-image: url("./assets/Group 3.png")
+}
+
+#shuvam_paper{
+  background-image: url("./assets/Group 1.png");
+}
+
+.shuvam_result-zone {
+  height: 90%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 5px;
+  display: none;
+}
+
+.shuvam_result {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+}
+
+.shuvam_result-text{
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.shuvam_sub-text{
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+#shuvam_lost-text, #shuvam_tie-text, .shuvam_replayBtn{
+  display: none;
+}
+
+.shuvam_result > button {
+  border: 2px solid var(--white);
+  background-color: var(--white);
+  border-radius: 5px;
+  height: 2rem;
+  color:var(--gray);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  width: 70%;
+  cursor: pointer;
+}
+
+.shuvam_side{
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  align-content: space-between;
+  justify-content: center;
+  align-items: center;
+  width: 32%;
+}
+
+.shuvam_side-text {
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  font-weight: 600;
+  z-index: 1;
+  margin-bottom: 2%;
+}
+
+#shuvam_user-rock, #shuvam_pc-rock{
+  background-image: url("./assets/Group 2.png");
+}
+
+#shuvam_user-scissor, #shuvam_pc-scissor{
+  background-image: url("./assets/Group 3.png");
+  display: none;
+}
+
+#shuvam_user-paper, #shuvam_pc-paper{
+  background-image: url("./assets/Group 1.png");
+  display: none;
+}
+
+.shuvam_green-background{
+  border: none;
+  box-shadow:
+  0 0 0 10px var(--inner-grren) inset, 
+  0 0 0 10px var(--inner-grren), 
+  0 0 0 25px var(--mid-green), 
+  0 0 0 40px var(--outer-green);
+  border-radius: 50%;
+}
+
+.shuvam_cross{
+  background-image: url("./assets/redbg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 50%;
+  right: 2%;
+  z-index: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+
+.shuvam_rules{
+  background-color: var(--dark-green);
+  color: var(--white);
+  height: 44%;
+  width: 21%;
+  border: 7px solid var(--white);
+  border-radius: 2rem;
+  padding: 15px 10px;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 10%;
+  right: 3%;
+  display: none;
+}
+
+.shuvam_rules > h4 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  height: 15%;
+}
+
+.shuvam_rules-list {
+  font-size: 0.85rem;
+  list-style-type: none;
+  font-weight: 400;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.shuvam_rules-list > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: full;
+  gap: 1rem;
+}
+
+.shuvam_yellow-pointer{
+  width: 10%;
+}
+
+.shuvam_winner-screen{
+  width: 100vw;
+  height: 100vh;
+  background: var(--green);
+  color: var(--white);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.shuvam_trophy{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding-bottom: 2rem;
+  height: 55%;
+  position: relative;
+  width: 100%;
+}
+
+.shuvam_stars{
+  position: absolute;
+}
+
+.shuvam_hurrayMsg{
+  font-size: 5rem;
+  letter-spacing: 9px;
+  height: 15%;
+}
+
+.shuvam_winMsg{
+  font-size: 2.5rem;
+  letter-spacing: 4px;
+  height: 10%;
+}
+
+.shuvam_winnerPlayBtn {
+  border: 2px solid var(--white);
+  background-color: var(--white);
+  border-radius: 5px;
+  height: 2.5rem;
+  color:var(--gray);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  width: 12rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+footer{
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+}
+
+footer > .shuvam_nextBtn{
+  border: 2px solid var(--white);
+  background: transparent;
+  width: 7rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-left: 1rem;
+  cursor: pointer;
+  display: none;
+}
+footer > .shuvam_rulesBtn{
+  border: 2px solid var(--white);
+  background: transparent;
+  width: 7rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  /* margin-left: 1rem; */
+  cursor: pointer;
+  /* display: none; */
+}
